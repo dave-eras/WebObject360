@@ -1,5 +1,5 @@
 const CONFIG = {
-    webObjectURL: "5ac9cRXuecF",
+    webObjectURL: "XXXX",
     maxRetries: 3,        // Maximum number of retry attempts
     retryDelay: 2000      // Delay between retries in milliseconds
 };
@@ -9,7 +9,7 @@ window.player = GetPlayer();  // Make player globally available
 window.vocabulary = null;     // Make vocabulary globally available
 
 let loadedCount = 0;
-const numLibs = 5;   // GSAP, gsap.js, vocabulary.json, image_handler.js, text_handler.js
+const numLibs = 6;   // GSAP, gsap.js, vocabulary.json, image_handler.js, text_handler.js, voice_handler.js
 let cachedXmlDoc = null;
 
 /**** Utility Functions ****/
@@ -87,7 +87,9 @@ window.loadJavaScriptFile("https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gs
         window.loadVocabularyJSON(() => {
             window.loadJavaScriptFile(webObjectFolder + "image_handler.js", () => {
                 window.loadJavaScriptFile(webObjectFolder + "text_handler.js", () => {
-                    console.log("All files loaded in sequence");
+                    window.loadJavaScriptFile(webObjectFolder + "voice_handler.js", () => {
+                        console.log("All files loaded in sequence");
+                    });
                 });
             });
         });
