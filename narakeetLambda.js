@@ -38,7 +38,7 @@ const languageVoiceMap = {
     'TR': 'Leyla',
 };
 
-const APIKEY = 'TK4jrT4FMk8pPXG3hhLgw4tRIOsHjcQn88R6MId0';
+const APIKEY = 'XXX';
 
 const handler = async (event, context) => {
     console.log('Received event:', JSON.stringify(event));
@@ -48,9 +48,9 @@ const handler = async (event, context) => {
     
     // Define allowed origins
     const allowedOrigins = [
-        'http://10.12.40.189:6640',
-        'https://academy.europa.eu',
-        'https://ols-demonstration-space.s3.eu-west-3.amazonaws.com'
+        'local',
+        'platform',
+        'amazon demonstration space'
     ];
     
     // Check if the origin is allowed
